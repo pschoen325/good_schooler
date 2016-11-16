@@ -1,0 +1,10 @@
+<ul>
+  <% @users.each do |u| %>
+  <%= content_tag_for(:li, u) do %>
+    <li>This is <strike><%= u.name %></strike> and they were created at: <em><%= u.created_at %></em>. They are part of Cohort <marquee> <%= u.code_school.name %>!</marquee>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<%= debug @users %>

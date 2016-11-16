@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Created</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
+        <td><%= time_ago_in_words(user.created_at) %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -21,6 +23,17 @@
     <% end %>
   </tbody>
 </table>
+
+<hr>
+
+Percentage: <%= number_to_percentage 45 %> <br/>
+Phone Number: <%= number_to_phone 4504567 %> <br/>
+Money: <%= number_to_currency 45123435 %> <br/>
+Computer Sizes: <%= number_to_human_size 45584393 %> <br/>
+Pluralizing: <%= pluralize 4353, 'woman' %> <br/>
+Truncate: <%= truncate "Once upon a dime there was a cookie monster :I", length: 3 %><br />
+Highlight: <%= highlight "Kanye West", "West" %><br />
+Custom: <%= boldification "Kanye Fest" %><br />
 
 <br>
 
